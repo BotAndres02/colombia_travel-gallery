@@ -1,6 +1,44 @@
+const imagesData = [
+  {
+    src: "img/sitios/parque_tayrona/tayrona.webp",
+    title: "Parque Nacional Natural Tayrona",
+    author: "Colombia Travel",
+    description: "Playas de arena blanca, selva tropical y cultura ancestral en la costa Caribe.",
+    date: "Septiembre 2025",
+    location: "Santa Marta, Colombia",
+    category: "Destino del Mes",
+  },
+  {
+    src: "img/sitios/valle_del_cocora/cocora.webp",
+    title: "Valle del Cocora",
+    author: "Colombia Travel",
+    description: "Hogar de las majestuosas palmas de cera, el árbol nacional de Colombia, rodeado de impresionantes paisajes montañosos.",
+    date: "Septiembre 2025",
+    location: "Salento, Quindío",
+    category: "Paisajes Andinos",
+  },
+  {
+    src: "img/sitios/parque_tayrona/tayrona2.webp",
+    title: "Playas del Caribe",
+    author: "Colombia Travel",
+    description: "Descubre las paradisíacas playas del Caribe colombiano, donde las aguas cristalinas se encuentran con la exuberante selva.",
+    date: "Septiembre 2025",
+    location: "Parque Tayrona",
+    category: "Playas",
+  },
+  {
+    src: "img/sitios/valle_del_cocora/cocora5.webp",
+    title: "Paisajes Andinos",
+    author: "Colombia Travel",
+    description: "Majestuosos paisajes de la Cordillera de los Andes, donde la naturaleza muestra toda su grandeza y las palmas de cera se alzan hacia el cielo.",
+    date: "Septiembre 2025",
+    location: "Cordillera de los Andes",
+    category: "Montañas",
+  }
+];
+
 // Inicializar toda la funcionalidad cuando el DOM esté cargado
 document.addEventListener("DOMContentLoaded", function () {
-    
   // Selectores del DOM
   const getDomElement = (selector, parent = document) =>
     parent.querySelector(selector);
@@ -33,7 +71,46 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Filtrado de galería y modal
+
+  // Modal de imágenes
+  getAllDomElements("[data-modal]").forEach((button, index) => {
+    addListener(button, "click", function () {
+      openModal(index);
+    });
+  });
+  
+  function openModal(imageIndex) {
+    const imageData = imagesData[imageIndex];
+    const modal = getDomElement("#imageModal");
+    
+    if (!modal || !imageData) return;
+
+    // Actualizar contenido del modal
+    getDomElement("#imageModalLabel").textContent = imageData.title;
+    getDomElement("#modalImage").src = imageData.src;
+    getDomElement("#modalImage").alt = imageData.title;
+    getDomElement("#modalAuthor").textContent = imageData.author;
+    getDomElement("#modalDate").textContent = imageData.date;
+    getDomElement("#modalLocation").textContent = imageData.location;
+    getDomElement("#modalCategory").textContent = imageData.category;
+    getDomElement("#modalDescription").textContent = imageData.description;
+
+    // Mostrar el modal usando la API de Bootstrap
+    const bsModal = new bootstrap.Modal(modal);
+    bsModal.show();
+  }
+
+  // Event listener para resetear el contenido del modal cuando se cierre
+  const imageModal = getDomElement("#imageModal");
+  if (imageModal) {
+    addListener(imageModal, "hidden.bs.modal", function () {
+      getDomElement("#modalImage").src = "";
+      getDomElement("#modalImage").alt = "";
+    });
+  }
+
+
+  // Filtrado de galería
   const filterButtons = getAllDomElements("[data-filter]");
   const galleryItems = getAllDomElements(".gallery-item");
 
