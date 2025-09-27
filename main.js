@@ -27,13 +27,13 @@ const imagesData = [
     category: "Playas",
   },
   {
-    src: "img/sitios/valle_del_cocora/cocora5.webp",
-    title: "Paisajes Andinos",
+    src: "img/sitios/caño_cristales/cristales.webp",
+    title: "Aguas Majestuosas",
     author: "Colombia Travel",
-    description: "Majestuosos paisajes de la Cordillera de los Andes, donde la naturaleza muestra toda su grandeza y las palmas de cera se alzan hacia el cielo.",
-    date: "Septiembre 2025",
-    location: "Cordillera de los Andes",
-    category: "Montañas",
+    description: "Conocido como el 'Río de los Cinco Colores', Caño Cristales es una maravilla natural única donde las plantas acuáticas Macarenia clavigera crean un espectáculo de colores vibrantes que van del rojo al amarillo, verde y azul.",
+    date: "Mayo 2025",
+    location: "Serranía de la Macarena",
+    category: "Rios",
   }
 ];
 
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
         submitButton.innerHTML =
           '<i class="fas fa-spinner fa-spin me-2"></i>Enviando...';
 
-        // Simular envío del formulario (reemplazar con tu lógica real de envío)
+        // Simular envío del formulario
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
         // Mostrar mensaje de éxito
