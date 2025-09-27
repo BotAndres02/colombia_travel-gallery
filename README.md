@@ -1,13 +1,16 @@
-# Primer Proyecto
-Primer proyecto del diplomado del bootcam de desarrollo web fullstack, aplicando Html, Css, Bootstrap and JavaScript.
+# Colombia Travel
+Este proyecto es una galería de imágenes dedicada a diversos destinos turísticos de Colombia. Incluye una sección con los lugares más destacados, una galería fotográfica de diferentes regiones del país y un formulario de contacto con validación para quienes deseen recibir más información.
 
-## Objetivos específicos
+## Primer Proyecto
+Primer proyecto del diplomado del bootcamp de desarrollo web fullstack, aplicando Html, Css, Bootstrap and JavaScript.
+
+### Objetivos específicos
 - Implementar lógica de programación en JavaScript para interactividad y manejo de datos.
 - Aplicar HTML, CSS y Bootstrap para un diseño responsivo y estructurado.
 - Desarrollar habilidades de resolución de problemas mediante la implementación de funcionalidades dinámicas.
 - Fomentar el trabajo en equipo y la organización de tareas en el desarrollo del proyecto.
 
-## Instrucciones
+### Instrucciones
 - Estructura HTML: Usa etiquetas semánticas como `<header>`, `<main>`, `<section>`, y `<footer>`.
 - Páginas requeridas:
     - **Inicio:** Destacados y categorías.
@@ -15,7 +18,7 @@ Primer proyecto del diplomado del bootcam de desarrollo web fullstack, aplicando
     - **Detalle de imagen:** Vista ampliada con descripción y autor.
     - **Sobre nosotros:** Información de los autores con formulario de contacto.
 
-## Estilos CSS y Bootstrap
+### Estilos CSS y Bootstrap
 - Define una paleta de colores y una tipografía coherente.
 - Usa **Bootstrap** para crear un diseño responsivo.
 - Aplica estilos a los elementos:
@@ -23,14 +26,14 @@ Primer proyecto del diplomado del bootcam de desarrollo web fullstack, aplicando
     - Estilos para las miniaturas de la galería.
     - Estilos para el formulario de contacto.
 
-## Lógica en JavaScript
+### Lógica en JavaScript
 - Implementar funciones para:
     - Filtrar las imágenes por categoría.
     - Mostrar la vista detallada de una imagen.
     - Validar el formulario de contacto.
 
-## Publicación en GitHub
-- Crea un repositorio en GitHub con el nombre del proyecto.\
+### Publicación en GitHub
+- Crea un repositorio en GitHub con el nombre del proyecto.
 - Sube los archivos (index.html, styles.css, script.js, carpeta assets) al repositorio.
 - Asegúrate de incluir un archivo README.md con una breve descripción del proyecto.
 - Publica el proyecto con GitHub Pages.

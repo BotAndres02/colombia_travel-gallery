@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colombia Travel</title>
+  <link rel="icon" type="image/x-icon" href="/img/iconos/favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="imageModalLabel"></h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-8">
+                <img id="modalImage" src="" alt="" class="img-fluid rounded">
+              </div>
+              <div class="col-md-4">
+                <div class="image-details">
+                  <p class="image-author mb-2"><strong>Autor:</strong> <span id="modalAuthor"></span></p>
+                  <p class="image-date mb-2"><strong>Fecha:</strong> <span id="modalDate"></span></p>
+                  <p class="image-location mb-2"><strong>Ubicación:</strong> <span id="modalLocation"></span></p>
+                  <p class="image-category mb-2"><strong>Categoría:</strong> <span id="modalCategory"></span></p>
+                  <div class="image-description mt-3">
+                    <h6>Descripción:</h6>
+                    <p id="modalDescription"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="container-fluid text-white text-center">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" role="navigation" aria-label="Navegación principal">
+      <div class="container-fluid">
+        <div class="navbar-brand">
+          <img src="./img/iconos/logos.webp" alt="Logo Colombia Travel" width="200" height="100"
+            class="d-inline-block align-text-top" />
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Alternar navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse custom-navbar" id="navbarSupportedContent">
+          <div class="header-title">
+            <h1>Colombia</h1>
+            <h2>Travel</h2>
+          </div>
+          <ul class="navbar-nav" role="menubar">
+            <li class="nav-item" role="none">
+              <a class="nav-link active" aria-current="page" href="#" role="menuitem">Inicio</a>
+            </li>
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="#galeria" role="menuitem">Galería</a>
+            </li>
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="#nosotros" role="menuitem">Nosotros</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="hero-section position-relative" aria-label="Carrusel de destinos principales">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <!-- Carousel Indicadores -->
+        <div class="carousel-indicators" role="tablist" aria-label="Indicadores del carrusel">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Ir a diapositiva 1: Descubre Colombia" role="tab"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+            aria-label="Ir a diapositiva 2: Parque Tayrona" role="tab"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+            aria-label="Ir a diapositiva 3: Valle del Cocora" role="tab"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"
+            aria-label="Ir a diapositiva 4: Caño Cristales" role="tab"></button>
+        </div>
+
+        <!-- Carusel Items -->
+        <div class="carousel-inner" role="tabpanel">
+          <div class="carousel-item active">
+            <img src="img/sitios/parque_tayrona/tayrona2.webp" class="d-block w-100 hero-img"
+              alt="Hermosas playas del Caribe colombiano con aguas cristalinas" />
+            <div class="hero-overlay"></div>
+            <div class="carousel-caption hero-content">
+              <article class="hero-text-container">
+                <h1 class="hero-title display-3 fw-bold mb-3" data-aos="fade-up">
+                  Descubre Colombia
+                </h1>
+                <p class="hero-subtitle lead mb-4" data-aos="fade-up" data-aos-delay="200">
+                  Un país de contrastes donde la naturaleza, la cultura y la
+                  aventura se encuentran
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                  <a href="#galeria" class="btn btn-primary btn-lg me-3 hero-btn"
+                    aria-label="Explorar destinos turísticos">Explorar Destinos</a>
+                  <a href="#destacados" class="btn btn-outline-light btn-lg hero-btn"
+                    aria-label="Ver más información">Ver Más</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="img/sitios/parque_tayrona/tayrona.webp" class="d-block w-100 hero-img"
+              alt="Parque Nacional Tayrona - Naturaleza virgen en la costa Caribe" />
+            <div class="hero-overlay"></div>
+            <div class="carousel-caption hero-content">
+              <article class="hero-text-container">
+                <h1 class="hero-title display-3 fw-bold mb-3">
+                  Parque Tayrona
+                </h1>
+                <p class="hero-subtitle lead mb-4">
+                  Donde la selva tropical se encuentra con el mar Caribe en
+                  perfecta armonía
+                </p>
+                <div class="hero-buttons">
+                  <a href="#galeria" class="btn btn-primary btn-lg me-3 hero-btn"
+                    aria-label="Ver galería del Parque Tayrona">Ver Galería</a>
+                  <a href="#destacados" class="btn btn-outline-light btn-lg hero-btn"
+                    aria-label="Más información sobre Tayrona">Más Info</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="img/sitios/valle_del_cocora/cocora.webp" class="d-block w-100 hero-img"
+              alt="Valle del Cocora - Palmas de cera en paisaje montañoso" />
+            <div class="hero-overlay"></div>
+            <div class="carousel-caption hero-content">
+              <article class="hero-text-container">
+                <h1 class="hero-title display-3 fw-bold mb-3">
+                  Valle del Cocora
+                </h1>
+                <p class="hero-subtitle lead mb-4">
+                  Hogar de las majestuosas palmas de cera, símbolo nacional de
+                  Colombia
+                </p>
+                <div class="hero-buttons">
+                  <a href="#galeria" class="btn btn-primary btn-lg me-3 hero-btn"
+                    aria-label="Descubrir Valle del Cocora">Descubrir</a>
+                  <a href="#destacados" class="btn btn-outline-light btn-lg hero-btn"
+                    aria-label="Ver aventuras en el Valle">Aventuras</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="img/sitios/caño_cristales/cristales.webp" class="d-block w-100 hero-img"
+              alt="Caño Cristales - El río más hermoso del mundo con colores naturales" />
+            <div class="hero-overlay"></div>
+            <div class="carousel-caption hero-content">
+              <article class="hero-text-container">
+                <h1 class="hero-title display-3 fw-bold mb-3">
+                  Caño Cristales
+                </h1>
+                <p class="hero-subtitle lead mb-4">
+                  El río de los cinco colores, una maravilla natural única en
+                  el mundo
+                </p>
+                <div class="hero-buttons">
+                  <a href="#galeria" class="btn btn-primary btn-lg me-3 hero-btn"
+                    aria-label="Explorar Caño Cristales">Explorar</a>
+                  <a href="#destacados" class="btn btn-outline-light btn-lg hero-btn"
+                    aria-label="Planificar viaje a Caño Cristales">Planificar</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles del carusel -->
+
+        <button class="carousel-control-prev hero-control" type="button" data-bs-target="#heroCarousel"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon hero-control-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next hero-control" type="button" data-bs-target="#heroCarousel"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon hero-control-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+
+      </div>
+    </section>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="container-fluid p-3">
+
+    <!-- Categorías Destacadas -->
+    <section id="destacado-categorias" class="py-4 bg-light" aria-labelledby="destacado-categorias-title">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 id="destacado-categorias-title" class="display-5 fw-bold mb-3 destacados-categories-title">
+            Destinos por Categorías
+          </h2>
+          <p class="lead text-muted">
+            Explora Colombia a través de sus diversas categorías de
+            destinos
+          </p>
+        </div>
+      </div>
+
+      <!-- Destacados -->
+      <div id="destacados" class="py-4" aria-labelledby="destacados-title">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 id="destacados-title" class="m-0">Destacados</h2>
+            <a href="#galeria" class="btn btn-primary btn-sm" aria-label="Ver todos los destinos destacados">Ver
+              todo</a>
+          </div>
+          <div class="row g-3">
+            <!-- Destino del Mes -->
+            <div class="col-12 col-lg-6">
+              <article class="card h-100 shadow-sm">
+                <img src="img/sitios/parque_tayrona/tayrona.webp" class="card-img-top"
+                  alt="Vista panorámica del Parque Nacional Tayrona" />
+                <div class="card-body">
+                  <span class="badge bg-warning text-dark mb-2" role="img"
+                    aria-label="Destacado como destino del mes">Destino del Mes</span>
+                  <h3 class="card-title">Parque Nacional Natural Tayrona</h3>
+                  <p class="card-text">
+                    Playas de arena blanca, selva tropical y cultura ancestral
+                    en la costa Caribe.
+                  </p>
+                  <button class="btn btn-primary btn-sm" data-modal="ver-detalle" aria-label="Ver detalles del Parque Tayrona">Ver
+                    detalle</button>
+                </div>
+              </article>
+            </div>
+            <!-- Experiencias Populares -->
+            <aside class="col-12 col-lg-6" aria-labelledby="experiencias-title">
+              <h3 id="experiencias-title" class="visually-hidden">Experiencias Populares</h3>
+              <div class="row g-3">
+                <div class="col-12">
+                  <article class="card shadow-sm h-100">
+                    <div class="row g-0 align-items-center">
+                      <div class="col-4">
+                        <img src="img/sitios/valle_del_cocora/cocora.webp" class="img-fluid rounded-start"
+                          alt="Palmas de cera en el Valle del Cocora" />
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body">
+                          <h4 class="card-title mb-1">
+                            Senderismo en el Valle del Cocora
+                          </h4>
+                          <p class="card-text small mb-2">
+                            Naturaleza y aventura entre palmas de cera.
+                          </p>
+                          <button class="btn btn-primary btn-secondary btn-sm" data-modal="ver-detalle"
+                            aria-label="Explorar senderismo en Valle del Cocora">Explorar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12">
+                  <article class="card shadow-sm h-100">
+                    <div class="row g-0 align-items-center">
+                      <div class="col-4">
+                        <img src="img/sitios/parque_tayrona/tayrona2.webp" class="img-fluid rounded-start"
+                          alt="Playas paradisíacas del Caribe colombiano" />
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body">
+                          <h4 class="card-title mb-1">Playas del Caribe</h4>
+                          <p class="card-text small mb-2">
+                            Aguas turquesa y arenas blancas.
+                          </p>
+                          <button href="#" class="btn btn-primary btn-secondary btn-sm" data-modal="ver-detalle"
+                            aria-label="Explorar playas del Caribe">Explorar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12">
+                  <article class="card shadow-sm h-100">
+                    <div class="row g-0 align-items-center">
+                      <div class="col-4">
+                        <img src="img/sitios/caño_cristales/cristales.webp" class="img-fluid rounded-start"
+                          alt="Paisajes montañosos de la Cordillera de los Andes" />
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body">
+                          <h4 class="card-title mb-1">Aguas Majestuosas</h4>
+                          <p class="card-text small mb-2">
+                            Rios, y aguas cristalinas con colores de película. 
+                          </p>
+                          <button href="#" class="btn btn-primary btn-secondary btn-sm" data-modal="ver-detalle"
+                            aria-label="Explorar paisajes andinos">Explorar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categorías -->
+      <div id="categorias" class="py-4" aria-labelledby="categorias-title">
+        <div class="container">
+          <div class="mb-3">
+            <h2 id="categorias-title" class="m-0">Categorías</h2>
+          </div>
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+            <div class="col">
+              <article class="card h-100 shadow-sm">
+                <img src="img/sitios/zipaquira/zipaquira5.webp" class="card-img-top"
+                  alt="Catedral de Sal de Zipaquirá, ejemplo del patrimonio cultural colombiano" />
+                <div class="card-body">
+                  <h3 class="card-title">Patrimonio Cultural</h3>
+                  <p class="card-text small">
+                    Ciudades coloniales, museos y sitios arqueológicos.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 shadow-sm">
+                <img src="img/sitios/caño_cristales/cristales.webp" class="card-img-top"
+                  alt="Caño Cristales, destino ideal para naturaleza y aventura" />
+                <div class="card-body">
+                  <h3 class="card-title">Naturaleza y Aventura</h3>
+                  <p class="card-text small">
+                    Parques nacionales, senderismo y avistamiento de fauna.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 shadow-sm">
+                <img src="img/sitios/parque_tayrona/tayrona.webp" class="card-img-top"
+                  alt="Costas paradisíacas del Caribe y Pacífico colombiano" />
+                <div class="card-body">
+                  <h3 class="card-title">Costas y Playas</h3>
+                  <p class="card-text small">
+                    Caribe y Pacífico: mar, sol y arena.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 shadow-sm">
+                <img src="img/sitios/valle_del_cocora/cocora.webp" class="card-img-top"
+                  alt="Paisajes montañosos de la Cordillera de los Andes" />
+                <div class="card-body">
+                  <h3 class="card-title">Montañas y Paisajes</h3>
+                  <p class="card-text small">
+                    Cordillera de los Andes, páramos y miradores.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 shadow-sm">
+                <img src="img/sitios/foto-comida.webp" class="card-img-top" alt="Gastronomía típica colombiana" />
+                <div class="card-body">
+                  <h3 class="card-title">Gastronomía</h3>
+                  <p class="card-text small">
+                    Platos típicos, mercados y experiencias culinarias.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería de Destinos -->
+    <section id="galeria" class="py-5" aria-labelledby="galeria-title">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 id="galeria-title" class="display-5 fw-bold text-primary mb-3">
+            Galería de Destinos
+          </h2>
+          <p class="lead text-muted">
+            Descubre la belleza natural y cultural de Colombia a través de
+            nuestras imágenes
+          </p>
+        </div>
+
+        <!-- Filtros de Galería -->
+        <nav class="d-flex justify-content-center mb-4" aria-label="Filtros de galería">
+          <div class="btn-group flex-wrap filter-buttons" role="group" aria-label="Filtrar imágenes por destino">
+            <button type="button" class="btn btn-outline-primary active" data-filter="all" aria-pressed="true">
+              Todos
+            </button>
+            <button type="button" class="btn btn-outline-primary" data-filter="tayrona" aria-pressed="false">
+              Tayrona
+            </button>
+            <button type="button" class="btn btn-outline-primary" data-filter="cocora" aria-pressed="false">
+              Valle del Cocora
+            </button>
+            <button type="button" class="btn btn-outline-primary" data-filter="cristales" aria-pressed="false">
+              Caño Cristales
+            </button>
+            <button type="button" class="btn btn-outline-primary" data-filter="zipaquira" aria-pressed="false">
+              Zipaquirá
+            </button>
+          </div>
+        </nav>
+
+        <!-- Grid de Imágenes -->
+        <div class="row g-4" id="gallery-grid" role="region" aria-live="polite"
+          aria-label="Galería de imágenes filtrable">
+          <!-- Parque Tayrona -->
+          <article class="col-lg-4 col-md-6 gallery-item" data-category="tayrona">
+            <figure class="gallery-card position-relative overflow-hidden rounded-3 shadow-sm">
+              <img src="img/sitios/parque_tayrona/tayrona.webp" class="img-fluid gallery-img"
+                alt="Parque Tayrona - Playa principal con aguas cristalinas" />
+              <figcaption class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end">
+                <div class="overlay-content p-3 text-white w-100">
+                  <h3 class="mb-1">Parque Tayrona</h3>
+                  <p class="mb-0 small">
+                    Playa principal con aguas cristalinas
+                  </p>
+                </div>
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="col-lg-4 col-md-6 gallery-item" data-category="tayrona">
+            <div class="gallery-card position-relative overflow-hidden rounded-3 shadow-sm">
+              <img src="img/sitios/parque_tayrona/tayrona2.webp" class="img-fluid gallery-img"
+                alt="Parque Tayrona - Sendero natural" />
+              <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end">
+                <div class="overlay-content p-3 text-white w-100">
+                  <h5 class="mb-1">Senderos del Tayrona</h5>
+                  <p class="mb-0 small">Naturaleza virgen y biodiversidad</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-lg-4 col-md-6 gallery-item" data-category="tayrona">
+            <div class="gallery-card position-relative overflow-hidden rounded-3 shadow-sm">
+              <img src="img/sitios/parque_tayrona/tayrona3.webp" class="img-fluid gallery-img"
+                alt="Parque Tayrona - Atardecer" />
+              <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end">
+                <div class="overlay-content p-3 text-white w-100">
+                  <h5 class="mb-1">Atardecer en Tayrona</h5>
+                  <p class="mb-0 small">Colores mágicos del Caribe</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Valle del Cocora -->
+          <article class="col-lg-4 col-md-6 gallery-item" data-category="cocora">
+            <div class="gallery-card position-relative overflow-hidden rounded-3 shadow-sm">
+              <img src="img/sitios/valle_del_cocora/cocora.webp" class="img-fluid gallery-img"
+                alt="Valle del Cocora - Palmas de cera" />
+              <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end">
+                <div class="overlay-content p-3 text-white w-100">
+                  <h5 class="mb-1">Valle del Cocora</h5>
+                  <p class="mb-0 small">Palmas de cera, árbol nacional</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-lg-4 col-md-6 gallery-item" data-category="cocora">
+            <div class="gallery-card position-relative overflow-hidden rounded-3 shadow-sm">
+              <img src="img/sitios/valle_del_cocora/cocora2.webp" class="img-fluid gallery-img"
+                alt="Valle del Cocora - Paisaje montañoso" />
+              <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end">
+                <div class="overlay-content p-3 text-white w-100">
+                  <h5 class="mb-1">Paisajes del Cocora</h5>
+                  <p class="mb-0 small">Montañas y valles verdes</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-lg-4 col-md-6 gallery-item" data-category="cocora">
+            <div class="gallery-card position-relative overflow-hidden rounded-3 shadow-sm">
+              <img src="img/sitios/valle_del_cocora/cocora3.webp" class="img-fluid gallery-img"
+                alt="Valle del Cocora - Senderismo" />
+              <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end">
+                <div class="overlay-content p-3 text-white w-100">
+                  <h5 class="mb-1">Senderismo en Cocora</h5>
+                  <p class="mb-0 small">Aventura entre las palmas</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Caño Cristales -->
+          <article class="col-lg-4 col-md-6 gallery-item" data-category="cristales">
+            <div class="gallery-card position-relative overflow-hidden rounded-3 shadow-sm">
+              <img src="img/sitios/caño_cristales/cristales.webp" class="img-fluid gallery-img"
+                alt="Caño Cristales - Río de colores" />
+              <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end">
+                <div class="overlay-content p-3 text-white w-100">
+                  <h5 class="mb-1">Caño Cristales</h5>
+                  <p class="mb-0 small">El río más hermoso del mundo</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-lg-4 col-md-6 gallery-item" data-category="cristales">
+            <div class="gallery-card position-relative overflow-hidden rounded-3 shadow-sm">
+              <img src="img/sitios/caño_cristales/cristales2.webp" class="img-fluid gallery-img"
+                alt="Caño Cristales - Colores naturales" />
+              <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end">
+                <div class="overlay-content p-3 text-white w-100">
+                  <h5 class="mb-1">Colores de Cristales</h5>
+                  <p class="mb-0 small">Macarenia clavigera en acción</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-lg-4 col-md-6 gallery-item" data-category="cristales">
+            <div class="gallery-card position-relative overflow-hidden rounded-3 shadow-sm">
+              <img src="img/sitios/caño_cristales/cristales3.webp" class="img-fluid gallery-img"
+                alt="Caño Cristales - Formaciones rocosas" />
+              <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end">
+                <div class="overlay-content p-3 text-white w-100">
+                  <h5 class="mb-1">Formaciones Cristales</h5>
+                  <p class="mb-0 small">Rocas milenarias y agua pura</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Zipaquirá -->
+          <article class="col-lg-4 col-md-6 gallery-item" data-category="zipaquira">
+            <div class="gallery-card position-relative overflow-hidden rounded-3 shadow-sm">
+              <img src="img/sitios/zipaquira/zipaquira.webp" class="img-fluid gallery-img"
+                alt="Catedral de Sal - Zipaquirá" />
+              <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end">
+                <div class="overlay-content p-3 text-white w-100">
+                  <h5 class="mb-1">Catedral de Sal</h5>
+                  <p class="mb-0 small">
+                    Maravilla arquitectónica subterránea
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-lg-4 col-md-6 gallery-item" data-category="zipaquira">
+            <div class="gallery-card position-relative overflow-hidden rounded-3 shadow-sm">
+              <img src="img/sitios/zipaquira/zipaquira2.webp" class="img-fluid gallery-img"
+                alt="Zipaquirá - Interior catedral" />
+              <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end">
+                <div class="overlay-content p-3 text-white w-100">
+                  <h5 class="mb-1">Interior de la Catedral</h5>
+                  <p class="mb-0 small">Arte tallado en sal</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-lg-4 col-md-6 gallery-item" data-category="zipaquira">
+            <div class="gallery-card position-relative overflow-hidden rounded-3 shadow-sm">
+              <img src="img/sitios/zipaquira/zipaquira3.webp" class="img-fluid gallery-img"
+                alt="Zipaquirá - Túneles de sal" />
+              <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end">
+                <div class="overlay-content p-3 text-white w-100">
+                  <h5 class="mb-1">Túneles de Zipaquirá</h5>
+                  <p class="mb-0 small">Laberintos de sal y historia</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="py-5 bg-light" aria-labelledby="nosotros-title">
+      <div class="container">
+        <!-- Encabezado de la sección -->
+        <div class="text-center mb-5">
+          <h2 id="nosotros-title" class="display-5 fw-bold mb-3 nosotros-title">Nosotros</h2>
+          <p class="lead text-muted">
+            Apasionados por mostrar la belleza de Colombia al mundo
+          </p>
+        </div>
+
+        <!-- Formulario de Contacto -->
+        <section class="row mt-5" aria-labelledby="contacto-title">
+          <div class="col-12">
+            <div class="contact-section bg-white rounded-3 shadow-lg p-5">
+              <div class="row">
+                <aside class="col-lg-6 mb-4 mb-lg-0">
+                  <h3 id="contacto-title" class="mb-4 contacto-title">
+                    ¿Listo para tu próxima aventura?
+                  </h3>
+                  <p class="lead mb-4">
+                    Contáctanos y diseñemos juntos la experiencia perfecta
+                    para descubrir Colombia.
+                  </p>
+
+                  <address class="contact-info">
+                    <div class="contact-item d-flex align-items-center mb-3">
+                      <div
+                        class="contact-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                        style="width: 50px; height: 50px" aria-hidden="true">
+                        <i class="fas fa-phone fs-5"></i>
+                      </div>
+                      <div>
+                        <h4 class="mb-1">Teléfono</h4>
+                        <p class="mb-0 text-muted">+57 (1) 234-5678</p>
+                      </div>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center mb-3">
+                      <div
+                        class="contact-icon bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                        style="width: 50px; height: 50px" aria-hidden="true">
+                        <i class="fas fa-envelope fs-5"></i>
+                      </div>
+                      <div>
+                        <h4 class="mb-1">Email</h4>
+                        <p class="mb-0 text-muted">info@colombiatravel.com</p>
+                      </div>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center mb-3">
+                      <div
+                        class="contact-icon bg-warning text-dark rounded-circle d-flex align-items-center justify-content-center me-3"
+                        style="width: 50px; height: 50px" aria-hidden="true">
+                        <i class="fas fa-map-marker-alt fs-5"></i>
+                      </div>
+                      <div>
+                        <h4 class="mb-1">Ubicación</h4>
+                        <p class="mb-0 text-muted">Bogotá, Colombia</p>
+                      </div>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center">
+                      <div
+                        class="contact-icon bg-info text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                        style="width: 50px; height: 50px" aria-hidden="true">
+                        <i class="fas fa-clock fs-5"></i>
+                      </div>
+                      <div>
+                        <h4 class="mb-1">Horario</h4>
+                        <p class="mb-0 text-muted">
+                          Lun - Vie: 8:00 AM - 6:00 PM
+                        </p>
+                      </div>
+                    </div>
+                  </address>
+                </aside>
+
+                <div class="col-lg-6">
+                  <form id="contactForm" class="contact-form">
+                    <div class="row">
+                      <div class="col-md-6 mb-3 form-group">
+                        <label for="firstName" class="form-label">Nombre *</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" required
+                          data-pristine-required-message="Por favor ingresa tu nombre" />
+                      </div>
+                      <div class="col-md-6 mb-3 form-group">
+                        <label for="lastName" class="form-label">Apellido *</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" required
+                          data-pristine-required-message="Por favor ingresa tu apellido" />
+                      </div>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                      <label for="email" class="form-label">Email *</label>
+                      <input type="email" class="form-control" id="email" name="email" required
+                        data-pristine-required-message="Por favor ingresa tu email"
+                        data-pristine-email-message="Por favor ingresa un email válido" />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="phone" class="form-label">Teléfono</label>
+                      <input type="tel" class="form-control" id="phone" name="phone" />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="destination" class="form-label">Destino de interés</label>
+                      <select class="form-select" id="destination" name="destination">
+                        <option value="">Selecciona un destino</option>
+                        <option value="tayrona">Parque Tayrona</option>
+                        <option value="cocora">Valle del Cocora</option>
+                        <option value="cristales">Caño Cristales</option>
+                        <option value="zipaquira">Zipaquirá</option>
+                        <option value="cartagena">Cartagena</option>
+                        <option value="medellin">Medellín</option>
+                        <option value="san-andres">San Andrés</option>
+                        <option value="zona-cafetera">Zona Cafetera</option>
+                        <option value="otro">Otro destino</option>
+                      </select>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                      <label for="travelDate" class="form-label">Fecha de viaje aproximada *</label>
+                      <input type="date" class="form-control" id="travelDate" name="travelDate" required
+                        data-pristine-required-message="Por favor selecciona una fecha aproximada de viaje" />
+                    </div>
+
+                    <div class="mb-3 form-group">
+                      <label for="travelers" class="form-label">Número de viajeros *</label>
+                      <select class="form-select" id="travelers" name="travelers" required
+                        data-pristine-required-message="Por favor selecciona el número de viajeros">
+                        <option value="">Selecciona</option>
+                        <option value="1">1 persona</option>
+                        <option value="2">2 personas</option>
+                        <option value="3-4">3-4 personas</option>
+                        <option value="5-8">5-8 personas</option>
+                        <option value="9+">Más de 8 personas</option>
+                      </select>
+                    </div>
+
+                    <div class="mb-4 form-group">
+                      <label for="message" class="form-label">Mensaje *</label>
+                      <textarea class="form-control" id="message" name="message" rows="4" required
+                        data-pristine-required-message="Por favor ingresa tu mensaje"
+                        placeholder="Cuéntanos sobre tu viaje ideal, intereses especiales, presupuesto aproximado, etc."></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter" />
+                        <label class="form-check-label" for="newsletter">
+                          Quiero recibir información sobre ofertas y destinos
+                          especiales
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-paper-plane me-2"></i>
+                        Enviar Mensaje
+                      </button>
+                    </div>
+
+                    <div id="formMessage" class="mt-3" style="display: none"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="container-fluid p-3 bg-dark text-white text-center">
+    <p>Colombia Travel | Derechos reservados &copy; 2025</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="dist/pristine.min.js" type="text/javascript"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
